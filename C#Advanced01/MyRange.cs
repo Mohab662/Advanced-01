@@ -8,9 +8,9 @@ namespace C_Advanced01
 {
     internal class MyRange<T> : IComparable<MyRange<T>>
     {
-        public int Minimum { get; set; }
-        public int Maximum { get; set; }
-        public MyRange(int _min, int _max)
+        public T Minimum { get; set; }
+        public T Maximum { get; set; }
+        public MyRange(T _min, T _max)
         {
             Minimum = _min;
             Maximum = _max;
@@ -30,17 +30,34 @@ namespace C_Advanced01
 
         public int Length()
         {
-            return Maximum - Minimum;
+            if (this.Maximum is int max && this.Minimum is int min)
+            {
+                return max - min;
+            }
+            else
+            {
+                return -1;
+            }
+
         }
 
         public int CompareTo(MyRange<T>? myRange)
         {
-            int left;
-            int Right;
+            // Compare To do what ???!
+
+            int left=0;
+            int Right=0;
+            if (this.Maximum is int max && this.Minimum is int min)
+            {
+                left= max - min;
+            }
+            if (myRange.Maximum is int maxR && myRange.Minimum is int minR)
+            {
+                Right = maxR - minR;
+            }
             if (myRange is not null)
             {
-                left = this.Maximum - this.Minimum;
-                Right = myRange.Maximum - myRange.Minimum;
+                
                 return left.CompareTo(Right);
             }
 

@@ -45,13 +45,14 @@ namespace C_Advanced01
 
             Console.WriteLine(myRange.IsInRange(17)); // False
 
-            Console.WriteLine(myRange.Length());  // 11
+            Console.WriteLine(myRange2.Length());  // 7
 
-            Console.WriteLine(myRange.CompareTo(myRange2)); // 1 
+            Console.WriteLine(myRange2.CompareTo(myRange)); // 1 
 
 
 
             #endregion
+
         }
     }
 }
